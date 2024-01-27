@@ -22,6 +22,8 @@
 		588906332B64DB4D005F9E5A /* NewTaskItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588906322B64DB4D005F9E5A /* NewTaskItemView.swift */; };
 		588906352B654D10005F9E5A /* ListRowItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588906342B654D10005F9E5A /* ListRowItemView.swift */; };
 		588906372B654F06005F9E5A /* CheckboxStyleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588906362B654F06005F9E5A /* CheckboxStyleView.swift */; };
+		588906392B65721D005F9E5A /* BlankView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588906382B65721D005F9E5A /* BlankView.swift */; };
+		5889063B2B65772E005F9E5A /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5889063A2B65772E005F9E5A /* SoundPlayer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		588906322B64DB4D005F9E5A /* NewTaskItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTaskItemView.swift; sourceTree = "<group>"; };
 		588906342B654D10005F9E5A /* ListRowItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowItemView.swift; sourceTree = "<group>"; };
 		588906362B654F06005F9E5A /* CheckboxStyleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckboxStyleView.swift; sourceTree = "<group>"; };
+		588906382B65721D005F9E5A /* BlankView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlankView.swift; sourceTree = "<group>"; };
+		5889063A2B65772E005F9E5A /* SoundPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				58873B002B5D883F003CFD4B /* ContentView.swift */,
+				588906382B65721D005F9E5A /* BlankView.swift */,
 				588906302B64BB7A005F9E5A /* BackgroundImageView.swift */,
 				588906322B64DB4D005F9E5A /* NewTaskItemView.swift */,
 				588906342B654D10005F9E5A /* ListRowItemView.swift */,
@@ -137,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				5889062E2B64B496005F9E5A /* Constants.swift */,
+				5889063A2B65772E005F9E5A /* SoundPlayer.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -233,6 +239,7 @@
 			files = (
 				588906352B654D10005F9E5A /* ListRowItemView.swift in Sources */,
 				58873B0B2B5D8841003CFD4B /* Devotee.xcdatamodeld in Sources */,
+				588906392B65721D005F9E5A /* BlankView.swift in Sources */,
 				588906312B64BB7A005F9E5A /* BackgroundImageView.swift in Sources */,
 				588906372B654F06005F9E5A /* CheckboxStyleView.swift in Sources */,
 				58873B082B5D8841003CFD4B /* Persistence.swift in Sources */,
@@ -240,6 +247,7 @@
 				58873B012B5D883F003CFD4B /* ContentView.swift in Sources */,
 				58873AFF2B5D883F003CFD4B /* DevoteeApp.swift in Sources */,
 				5889062F2B64B496005F9E5A /* Constants.swift in Sources */,
+				5889063B2B65772E005F9E5A /* SoundPlayer.swift in Sources */,
 				588906332B64DB4D005F9E5A /* NewTaskItemView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
