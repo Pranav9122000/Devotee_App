@@ -17,11 +17,40 @@ struct ContentView: View {
     private var items: FetchedResults<Item>
     
     @State private var showNewTaskItem: Bool = false
+    
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
 
     var body: some View {
         NavigationStack {
             ZStack {
                 VStack {
+                    
+                    HStack(spacing: 10) {
+                        Text("Devotee")
+                            .font(.system(.largeTitle, design: .rounded, weight: .heavy))
+                            .padding(.leading, 4)
+                        
+                        Spacer()
+                        
+                        EditButton()
+                            .font(.system(size: 16, weight: .semibold, design: .rounded))
+                            .padding(.horizontal, 10)
+                            .frame(minWidth: 70, minHeight: 24)
+                            .background(Capsule().stroke(lineWidth: 2))
+                        
+                        Button(action: {
+                            isDarkMode.toggle()
+                        }, label: {
+                            Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle")
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                                .font(.system(.title, design: .rounded))
+                        })
+                        
+                        
+                    }
+                    .padding()
+                    .foregroundStyle(.white)
                     
                     Spacer(minLength: 80)
                     
@@ -67,11 +96,7 @@ struct ContentView: View {
                 }
             }
             .navigationTitle("Daily Tasks")
-            .toolbar {
-                ToolbarItem(placement: .topBarTrailing) {
-                    EditButton()
-                }
-            }
+            .toolbar(.hidden)
             .background(
                 BackgroundImageView()
             )
