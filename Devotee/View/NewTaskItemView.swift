@@ -19,6 +19,8 @@ struct NewTaskItemView: View {
     
     @Binding var isShowing: Bool
     
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = false
+    
     var body: some View {
         VStack {
             Spacer()
@@ -28,7 +30,7 @@ struct NewTaskItemView: View {
                     .foregroundStyle(.pink)
                     .font(.system(size: 24, weight: .bold, design: .rounded))
                     .padding()
-                    .background(Color(UIColor.systemGray5))
+                    .background(isDarkMode ? Color(UIColor.tertiarySystemBackground) : Color(UIColor.secondarySystemBackground))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                 
                 Button(action: {
@@ -48,7 +50,7 @@ struct NewTaskItemView: View {
             }
             .padding(.horizontal)
             .padding(.vertical, 20)
-            .background(.white)
+            .background(isDarkMode ? Color(UIColor.secondarySystemBackground) : .white)
             .clipShape(RoundedRectangle(cornerRadius: 16))
             .shadow(color: .black.opacity(0.7), radius: 25)
             .frame(maxWidth: 640)
