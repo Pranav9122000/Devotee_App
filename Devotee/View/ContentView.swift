@@ -40,6 +40,7 @@ struct ContentView: View {
                         
                         Button(action: {
                             isDarkMode.toggle()
+                            playSound(sound: "sound-tap", type: "mp3")
                         }, label: {
                             Image(systemName: isDarkMode ? "moon.circle.fill" : "moon.circle")
                                 .resizable()
@@ -55,7 +56,8 @@ struct ContentView: View {
                     Spacer(minLength: 80)
                     
                     Button {
-                        showNewTaskItem.toggle()
+                        showNewTaskItem = true
+                        playSound(sound: "sound-ding", type: "mp3")
                     } label: {
                         HStack {
                             Image(systemName: "plus.circle")
@@ -81,10 +83,21 @@ struct ContentView: View {
                     .shadow(color: .black.opacity(0.6), radius: 12)
                     .padding()
                 }
-                .opacity(showNewTaskItem ? 0.6 : 1)
-                .animation(.easeOut(duration: 1), value: showNewTaskItem)
+                .blur(radius: showNewTaskItem ? 8 : 0, opaque: false)
+                .transition(.move(edge: .bottom))
+                .animation(.easeOut(duration: 0.5))
                 
                 if(showNewTaskItem) {
+                    BlankView(
+                        backgroundColor: isDarkMode ? .black : .gray,
+                        backgroundOpacity: isDarkMode ? 0.3 : 0.5)
+                        .onTapGesture {
+                            withAnimation() {
+                                showNewTaskItem = false
+                            }
+                        }
+                    
+                    
                     NewTaskItemView(isShowing: $showNewTaskItem)
                 }
             }
@@ -92,6 +105,7 @@ struct ContentView: View {
             .toolbar(.hidden)
             .background(
                 BackgroundImageView()
+                    .blur(radius: showNewTaskItem ? 8 : 0, opaque: false)
             )
             .background(backgroungGradient.ignoresSafeArea(.all))
         }
